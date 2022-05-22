@@ -14,8 +14,12 @@ body{
 
 h1{
     text-align: center;
-    text-decoration: underline;
     color: rgb(3, 25, 65);
+}
+
+h3{
+    text-align: center;
+    margin-bottom:20px;
 }
 
 .container{
