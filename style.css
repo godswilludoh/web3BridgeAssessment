@@ -9,13 +9,25 @@
 body{
     margin: 20px;
     font-family: 'Manrope', sans-serif;
+    background-color:#92A8D1;
 }
 
 h1{
     text-align: center;
     text-decoration: underline;
+    color: rgb(3, 25, 65);
 }
 
 .container{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+
+.iteration{
+    
+}
+table, th, td {
+    border: 1px solid;
+    height: 50px;
+  }
