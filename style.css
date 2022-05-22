@@ -20,13 +20,10 @@ h1{
 
 .container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.iteration{
-    
-}
 table, th, td {
     border: 1px solid;
     height: 50px;
