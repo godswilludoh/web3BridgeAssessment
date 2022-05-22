@@ -24,6 +24,86 @@ h1{
     align-items: center;
 }
 
+.iteration{
+    width: 50%;
+}
+
+.iteration-one{
+    margin: 10px;
+    padding: 10px;
+}
+
+.iteration-one input{
+    height: 40px;
+    padding: 14px;
+    border:none;
+    outline: none;
+}
+
+.iteration-one button{
+    width: 30%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.iteration-two{
+    margin: 10px;
+    padding: 10px;
+}
+
+.iteration-two input{
+    height: 40px;
+    padding: 14px;
+    border:none;
+    outline: none;
+}
+
+.iteration-two button{
+    width: 30%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.iteration-three{
+    margin: 10px;
+    padding: 10px;
+}
+
+.iteration-three input{
+    height: 40px;
+    padding: 14px;
+    border:none;
+    outline: none;
+}
+
+.iteration-three button{
+    width: 30%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.iteration-four{
+    margin: 10px;
+    padding: 10px;
+}
+
+.iteration-four input{
+    height: 40px;
+    padding: 14px;
+    border:none;
+    outline: none;
+}
+
+.iteration-four button{
+    width: 30%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+}
+
 table, th, td {
     border: 1px solid;
     height: 50px;
