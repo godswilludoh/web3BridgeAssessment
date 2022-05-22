@@ -89,11 +89,11 @@ const participants = [
 startIteration1.addEventListener('click', () => {
 	const id = document.getElementById('iteration1').value;
 	participants[id - 1].startTime = new Date();
-	let time = 3600
-        setInterval(() => {
-            time-= 1
-            document.getElementById("count1") = time;
-        }, 1000)
+	let time = 3600;
+	setInterval(() => {
+		time -= 1;
+		document.getElementById('count1').innerText = time;
+	}, 1000);
 });
 
 finishIteration1.addEventListener('click', () => {
@@ -114,6 +114,11 @@ startIteration2.addEventListener('click', () => {
 	if (participants[id - 1].iterationCount !== 1) {
 		alert('you have to finish iteration 1');
 	} else participants[id - 1].startTime = new Date();
+	let time = 3600;
+	setInterval(() => {
+		time -= 1;
+		document.getElementById('count2').innerText = time;
+	}, 1000);
 });
 
 finishIteration2.addEventListener('click', () => {
@@ -136,6 +141,11 @@ startIteration3.addEventListener('click', () => {
 	if (participants[id - 1].iterationCount !== 2) {
 		console.log('you have to finish iteration 2');
 	} else participants[id - 1].startTime = new Date();
+	let time = 3600;
+	setInterval(() => {
+		time -= 1;
+		document.getElementById('count3').innerText = time;
+	}, 1000);
 });
 
 finishIteration3.addEventListener('click', () => {
@@ -157,6 +167,11 @@ startIteration4.addEventListener('click', () => {
 	if (participants[id - 1].iterationCount !== 3) {
 		console.log('you have to finish iteration 3');
 	} else participants[id - 1].startTime = new Date();
+	let time = 3600;
+	setInterval(() => {
+		time -= 1;
+		document.getElementById('count4').innerText = time;
+	}, 1000);
 });
 
 finishIteration4.addEventListener('click', () => {
@@ -182,5 +197,9 @@ const resetLeaderBoard = (id) => {
 	leaderBoard.sort(function (a, b) {
 		return b.iterationCount - a.iterationCount;
 	});
+	document.getElementById(td1).innerText = leaderBoard[0].id;
+	document.getElementById(td2).innerText = leaderBoard[0].iterationCount;
+	document.getElementById(td3).innerText = leaderBoard[0].id;
+	document.getElementById(td4).innerText = leaderBoard[0].iterationCount;
 	return leaderBoard.slice(0, 10);
 };
