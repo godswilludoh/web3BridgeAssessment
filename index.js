@@ -87,139 +87,91 @@ const participants = [
 ];
 
 startIteration1.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration1');
-	participants.find((x, i) => {
-		if (x.id === id) return x;
-		i = index;
-		return x;
-	});
-	participants[index].startTime = new Date();
+	const id = document.getElementById('iteration1').value;
+	participants[id - 1].startTime = new Date();
 });
 
 finishIteration1.addEventListener('click', () => {
-	const id = document.getElementById('iteration1');
-	let index;
-	const part = participants.find((x, i) => {
-		i = index;
-		if (x.id === id) return x;
-		return x;
-	});
-	const seconds = part.startTime.getTime() / 1000;
+	const id = document.getElementById('iteration1').value;
+	const seconds = participants[id - 1].startTime.getTime() / 1000;
 	const currentTime = new Date().getTime() / 1000;
+	console.log(id, seconds);
 	if (currentTime >= seconds + 3600) {
-		participants[index].iterationCount = 1;
+		participants[id - 1].iterationCount = 1;
 		resetLeaderBoard(id);
 	} else {
-		console.log('Countdown to iteration 1 in progress');
+		alert('Countdown to iteration 1 in progress');
 	}
 });
 
 startIteration2.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration2');
-	participants.find((x, i) => {
-		if (x.id === id) return x;
-		i = index;
-		return x;
-	});
-	if (participants[index].iterationCount !== 1) {
-		console.log('you have to finish iteration 1');
-	} else participants[index].startTime = new Date();
+	const id = document.getElementById('iteration2').value;
+	if (participants[id - 1].iterationCount !== 1) {
+		alert('you have to finish iteration 1');
+	} else participants[id - 1].startTime = new Date();
 });
 
 finishIteration2.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration2');
-	const part = participants.find((x, i) => {
-		i = index;
-		if (x.id === id) return x;
-		return x;
-	});
-	const seconds = part.startTime.getTime() / 1000;
+	const id = document.getElementById('iteration2').value;
+	const seconds = participants[id - 1].startTime.getTime() / 1000;
+	console.log(seconds);
 	const currentTime = new Date().getTime() / 1000;
-	if (participants[index].iterationCount === 1) {
+	if (participants[id - 1].iterationCount === 1) {
 		if (currentTime >= seconds + 3600) {
-			participants[index].iterationCount = 2;
+			participants[id - 1].iterationCount = 2;
 			resetLeaderBoard(id);
 		} else {
-			console.log('Countdown to iteration 2 in progress');
+			alert('Countdown to iteration 2 in progress');
 		}
 	}
 });
 
 startIteration3.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration3');
-	participants.find((x, i) => {
-		if (x.id === id) return x;
-		i = index;
-		return x;
-	});
-	if (participants[index].iterationCount !== 2) {
+	const id = document.getElementById('iteration3').value;
+	if (participants[id - 1].iterationCount !== 2) {
 		console.log('you have to finish iteration 2');
-	} else participants[index].startTime = new Date();
+	} else participants[id - 1].startTime = new Date();
 });
 
 finishIteration3.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration3');
-	const part = participants.find((x, i) => {
-		i = index;
-		if (x.id === id) return x;
-		return x;
-	});
-	const seconds = part.startTime.getTime() / 1000;
+	const id = document.getElementById('iteration3').value;
+	const seconds = participants[id - 1].startTime.getTime() / 1000;
 	const currentTime = new Date().getTime() / 1000;
-	if (participants[index].iterationCount === 2) {
+	if (participants[id - 1].iterationCount === 2) {
 		if (currentTime >= seconds + 3600) {
-			participants[index].iterationCount = 3;
+			participants[id - 1].iterationCount = 3;
 			resetLeaderBoard(id);
 		} else {
-			console.log('Countdown to iteration 3 in progress');
+			alert('Countdown to iteration 3 in progress');
 		}
 	}
 });
 
 startIteration4.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration4');
-	participants.find((x, i) => {
-		if (x.id === id) return x;
-		i = index;
-		return x;
-	});
-	if (participants[index].iterationCount !== 3) {
+	const id = document.getElementById('iteration4').value;
+	if (participants[id - 1].iterationCount !== 3) {
 		console.log('you have to finish iteration 3');
-	} else participants[index].startTime = new Date();
+	} else participants[id - 1].startTime = new Date();
 });
 
 finishIteration4.addEventListener('click', () => {
-	let index;
-	const id = document.getElementById('iteration4');
-	const part = participants.find((x, i) => {
-		i = index;
-		if (x.id === id) return x;
-		return x;
-	});
-	const seconds = part.startTime.getTime() / 1000;
+	const id = document.getElementById('iteration4').value;
+	const seconds = participants[id - 1].startTime.getTime() / 1000;
 	const currentTime = new Date().getTime() / 1000;
-	if (participants[index].iterationCount === 3) {
+	if (participants[id - 1].iterationCount === 3) {
 		if (currentTime >= seconds + 3600) {
-			participants[index].iterationCount = 4;
+			participants[id - 1].iterationCount = 4;
 			resetLeaderBoard(id);
 		} else {
-			console.log('Countdown to iteration 4 in progress');
+			alert('Countdown to iteration 4 in progress');
 		}
 	}
 });
 
 const resetLeaderBoard = (id) => {
-	const part = participants.find((x, i) => {
-		if (x.id === id) return x;
-		return x;
-	});
+	const part = participants[id - 1];
 	const index = leaderBoard.findIndex((item) => item.id === id);
+	console.log(index);
 	if (index === undefined) leaderBoard.push(part);
 	else leaderBoard.splice(index, 1, part);
 	leaderBoard.sort(function (a, b) {
