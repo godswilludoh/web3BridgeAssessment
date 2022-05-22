@@ -89,6 +89,11 @@ const participants = [
 startIteration1.addEventListener('click', () => {
 	const id = document.getElementById('iteration1').value;
 	participants[id - 1].startTime = new Date();
+	let time = 3600
+        setInterval(() => {
+            time-= 1
+            document.getElementById("count1") = time;
+        }, 1000)
 });
 
 finishIteration1.addEventListener('click', () => {
