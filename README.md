@@ -5,4 +5,4 @@ Deployed site: https://peerexercisesystem.netlify.app/
 
 This is a Simple Peer Exercise Program that displays a leaderboard based on the top 10 participants that take part in the different iterations of exercises.
 It was created using HTML, CSS and vanilla JavaScript.
-To run program, click on the attached link. On the attached link, enter participants number and id to start countdown. Once countdown ends the leaderboard gets updated.
+To run program, click on the attached link. On the attached link, enter participant's id and name to start countdown. Once countdown ends, click on the finish iteration button to update the leaderboard. Iteration count was set to 30 seconds for each exercise. To get to the next iteration, the previous iteration should be completed.
